@@ -2,14 +2,14 @@
 
 namespace GymTracker.Entity
 {
-    public abstract class Excercise : IEntity
+    public abstract class Exercise : IEntity
     {
         [Obsolete("Only needed for serialization and materialization", true)]
-        protected Excercise()
+        protected Exercise()
         {
         }
 
-        protected Excercise(Routine routine)
+        protected Exercise(Routine routine)
         {
             Routine = routine;
         }

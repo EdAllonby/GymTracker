@@ -2,7 +2,7 @@
 
 namespace GymTracker.Entity
 {
-    public sealed class StrengthSet : Excercise
+    public sealed class StrengthSet : Exercise
     {
         [Obsolete("Only needed for serialization and materialization", true)]
         public StrengthSet() { }

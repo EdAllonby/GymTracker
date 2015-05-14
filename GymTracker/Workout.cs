@@ -9,16 +9,16 @@ namespace GymTracker
         public Workout()
         {
             Day = DateTime.Now;
-            Excercises = new List<Excercise>();
+            Exercises = new List<Exercise>();
         }
 
         public DateTime Day { get; private set; }
-        public List<Excercise> Excercises { get; private set; }
+        public List<Exercise> Exercises { get; private set; }
         public int Id { get; private set; }
 
-        public void AddExcercise(Excercise excercise)
+        public void AddExercise(Exercise exercise)
         {
-            Excercises.Add(excercise);
+            Exercises.Add(exercise);
         }
     }
 }

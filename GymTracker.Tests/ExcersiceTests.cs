@@ -8,12 +8,12 @@ namespace GymTracker.Tests
     public sealed class ExcersiceTests
     {
         [Test]
-        public void ExcerciseHasName()
+        public void ExerciseHasName()
         {
             Routine routine = Routine.BenchPress;
-            Excercise excercise = new StrengthSet(routine, 2, 20);
+            Exercise exercise = new StrengthSet(routine, 2, 20);
 
-            Assert.AreEqual(excercise.Routine, routine);
+            Assert.AreEqual(exercise.Routine, routine);
         }
     }
 }

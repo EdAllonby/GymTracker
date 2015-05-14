@@ -18,8 +18,8 @@ namespace GymTracker
             {
                 Workout workout = new Workout();
                 
-                Excercise benchPress = new StrengthSet(Routine.BenchPress, 5, 80);
-                workout.AddExcercise(benchPress);
+                Exercise benchPress = new StrengthSet(Routine.BenchPress, 5, 80);
+                workout.AddExercise(benchPress);
 
                 gymContext.Workouts.Add(workout);
                 gymContext.SaveChanges();
