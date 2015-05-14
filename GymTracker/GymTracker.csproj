@@ -65,9 +65,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Entity\GymContext.cs" />
+    <Compile Include="Entity\Routine.cs" />
     <Compile Include="Entity\StrengthSet.cs" />
     <Compile Include="Entity\Entity.cs" />
     <Compile Include="Tracker.cs" />
+    <Compile Include="Workout.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

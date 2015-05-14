@@ -16,12 +16,15 @@ namespace GymTracker
 
             using (var gymContext = new GymContext())
             {
-                Excercise benchPress = new StrengthSet("Bench Press", 5, 80);
-                gymContext.Excercises.Add(benchPress);
+                Workout workout = new Workout();
+                
+                Excercise benchPress = new StrengthSet(Routine.BenchPress, 5, 80);
+                workout.AddExcercise(benchPress);
+
+                gymContext.Workouts.Add(workout);
                 gymContext.SaveChanges();
 
-                List<Excercise> excercises = gymContext.Excercises.ToList();
-
+                List<Workout> workouts = gymContext.Workouts.ToList();
             }
         }
     }

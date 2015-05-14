@@ -4,6 +4,6 @@ namespace GymTracker.Entity
 {
     public class GymContext : DbContext
     {
-        public DbSet<Excercise> Excercises { get; set; }
+        public DbSet<Workout> Workouts { get; set; }
     }
 }

@@ -5,18 +5,17 @@ namespace GymTracker.Entity
     public abstract class Excercise : IEntity
     {
         [Obsolete("Only needed for serialization and materialization", true)]
-        protected Excercise() { }
-
-        protected Excercise(string name)
+        protected Excercise()
         {
-            Name = name;
-            Completion = DateTime.Now;
+        }
+
+        protected Excercise(Routine routine)
+        {
+            Routine = routine;
         }
 
         public int Id { get; private set; }
 
-        public string Name { get; private set; }
-
-        public DateTime Completion { get; private set; }
+        public Routine Routine { get; private set; }
     }
 }

@@ -57,6 +57,7 @@
     <Compile Include="ExcersiceTests.cs" />
     <Compile Include="StrengthSetTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkoutTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GymTracker\GymTracker.csproj">

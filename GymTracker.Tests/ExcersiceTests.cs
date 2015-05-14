@@ -10,20 +10,10 @@ namespace GymTracker.Tests
         [Test]
         public void ExcerciseHasName()
         {
-            const string excerciseName = "row";
-            Excercise excercise = new StrengthSet(excerciseName, 20, 20);
+            Routine routine = Routine.BenchPress;
+            Excercise excercise = new StrengthSet(routine, 2, 20);
 
-            Assert.AreEqual(excercise.Name, excercise);
-        }
-
-        [Test]
-        public void ExcerciseHasCompletionAsDateNow()
-        {
-            Excercise excercise = new StrengthSet("excercise", 12, 10.0);
-
-            double diffInSeconds = (DateTime.Now - excercise.Completion).TotalSeconds;
-
-            Assert.LessOrEqual(diffInSeconds, 5);
+            Assert.AreEqual(excercise.Routine, routine);
         }
     }
 }

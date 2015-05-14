@@ -10,7 +10,7 @@ namespace GymTracker.Tests
         public void StrengthSetHasWeight()
         {
             const double weight = 50.5;
-            StrengthSet strenghtSet = new StrengthSet("test", 12, weight);
+            StrengthSet strenghtSet = new StrengthSet(Routine.DumbellPress, 12, weight);
 
             Assert.AreEqual(weight, strenghtSet.Weight);
         }
@@ -19,7 +19,7 @@ namespace GymTracker.Tests
         public void StrengthSetHasReps()
         {
             const int reps = 12;
-            StrengthSet strengthSet = new StrengthSet("test", reps, 40.5);
+            StrengthSet strengthSet = new StrengthSet(Routine.Rows, reps, 10);
 
             Assert.AreEqual(reps, strengthSet.Reps);
         }
