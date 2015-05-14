@@ -1,4 +1,6 @@
-﻿namespace GymTracker
+﻿using GymTracker.ViewModels;
+
+namespace GymTracker
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -8,6 +10,7 @@
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
     }
 }

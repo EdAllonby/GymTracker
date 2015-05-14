@@ -14,6 +14,8 @@ namespace GymTracker.Models
             Routine = routine;
         }
 
+        public virtual Workout Workout { get; private set; }
+
         public Routine Routine { get; private set; }
         public int Id { get; private set; }
     }

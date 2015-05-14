@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymTracker.Tests", "GymTrac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymTracker.Models", "GymTracker.Models\GymTracker.Models.csproj", "{8C90BD88-0A02-402C-893A-D64E12997EEE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymTracker.ViewModels", "GymTracker.ViewModels\GymTracker.ViewModels.csproj", "{226DD655-5746-4C3B-94A9-D57858E0EE11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8C90BD88-0A02-402C-893A-D64E12997EEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C90BD88-0A02-402C-893A-D64E12997EEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C90BD88-0A02-402C-893A-D64E12997EEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{226DD655-5746-4C3B-94A9-D57858E0EE11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{226DD655-5746-4C3B-94A9-D57858E0EE11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{226DD655-5746-4C3B-94A9-D57858E0EE11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{226DD655-5746-4C3B-94A9-D57858E0EE11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

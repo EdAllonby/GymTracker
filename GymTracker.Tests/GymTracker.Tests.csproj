@@ -47,11 +47,7 @@
         <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
       </ItemGroup>
     </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
-      </ItemGroup>
-    </Otherwise>
+    <Otherwise />
   </Choose>
   <ItemGroup>
     <Compile Include="ExcersiceTests.cs" />
@@ -63,10 +59,6 @@
     <ProjectReference Include="..\GymTracker.Models\GymTracker.Models.csproj">
       <Project>{8C90BD88-0A02-402C-893A-D64E12997EEE}</Project>
       <Name>GymTracker.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GymTracker\GymTracker.csproj">
-      <Project>{BA7C3862-C309-49B8-A0A2-392A86E0262B}</Project>
-      <Name>GymTracker</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -12,7 +12,9 @@ namespace GymTracker.Models
         }
 
         public DateTime Day { get; private set; }
-        public List<Exercise> Exercises { get; }
+
+        public virtual ICollection<Exercise> Exercises { get;  private set; }
+
         public int Id { get; private set; }
 
         public void AddExercise(Exercise exercise)
