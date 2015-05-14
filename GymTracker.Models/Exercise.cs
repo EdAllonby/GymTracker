@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GymTracker.Entity
+namespace GymTracker.Models
 {
     public abstract class Exercise : IEntity
     {
@@ -14,8 +14,7 @@ namespace GymTracker.Entity
             Routine = routine;
         }
 
-        public int Id { get; private set; }
-
         public Routine Routine { get; private set; }
+        public int Id { get; private set; }
     }
 }

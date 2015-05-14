@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace GymTracker.Entity
+namespace GymTracker.Models
 {
     public class GymContext : DbContext
     {

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using GymTracker.Entity;
 
-namespace GymTracker
+namespace GymTracker.Models
 {
     public class Workout : IEntity
     {
@@ -13,7 +12,7 @@ namespace GymTracker
         }
 
         public DateTime Day { get; private set; }
-        public List<Exercise> Exercises { get; private set; }
+        public List<Exercise> Exercises { get; }
         public int Id { get; private set; }
 
         public void AddExercise(Exercise exercise)

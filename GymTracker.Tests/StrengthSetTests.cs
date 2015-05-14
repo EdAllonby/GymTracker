@@ -1,4 +1,4 @@
-﻿using GymTracker.Entity;
+﻿using GymTracker.Models;
 using NUnit.Framework;
 
 namespace GymTracker.Tests

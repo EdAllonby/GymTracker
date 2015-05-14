@@ -60,6 +60,10 @@
     <Compile Include="WorkoutTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GymTracker.Models\GymTracker.Models.csproj">
+      <Project>{8C90BD88-0A02-402C-893A-D64E12997EEE}</Project>
+      <Name>GymTracker.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GymTracker\GymTracker.csproj">
       <Project>{BA7C3862-C309-49B8-A0A2-392A86E0262B}</Project>
       <Name>GymTracker</Name>

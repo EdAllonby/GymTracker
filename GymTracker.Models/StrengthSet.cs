@@ -1,11 +1,13 @@
 ﻿using System;
 
-namespace GymTracker.Entity
+namespace GymTracker.Models
 {
     public sealed class StrengthSet : Exercise
     {
         [Obsolete("Only needed for serialization and materialization", true)]
-        public StrengthSet() { }
+        public StrengthSet()
+        {
+        }
 
         public StrengthSet(Routine routine, int reps, double weight) : base(routine)
         {

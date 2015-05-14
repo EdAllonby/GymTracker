@@ -1,6 +1,0 @@
-﻿namespace GymTracker
-{
-    class Tracker
-    {
-    }
-}

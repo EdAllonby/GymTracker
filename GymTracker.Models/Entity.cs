@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GymTracker.Entity
+﻿namespace GymTracker.Models
 {
     public interface IEntity
     {
