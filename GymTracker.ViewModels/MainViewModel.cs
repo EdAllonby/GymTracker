@@ -20,7 +20,7 @@ namespace GymTracker.ViewModels
                 List<Workout> workouts = context.Workouts.ToList();
 
                 Workouts = new ObservableCollection<WorkoutItemViewModel>();
-                Exercises = new ObservableCollection<ExerciseItemViewModel>();
+                Exercises = new ObservableCollection<StrengthSetItemViewModel>();
 
                 foreach (Workout workout in workouts)
                 {
@@ -33,7 +33,7 @@ namespace GymTracker.ViewModels
 
         public ObservableCollection<WorkoutItemViewModel> Workouts { get; set; }
 
-        public ObservableCollection<ExerciseItemViewModel> Exercises { get; set; } 
+        public ObservableCollection<StrengthSetItemViewModel> Exercises { get; set; } 
 
         public WorkoutItemViewModel SelectedWorkout
         {
@@ -45,7 +45,12 @@ namespace GymTracker.ViewModels
 
                 foreach (Exercise exercise in SelectedWorkout.Exercises)
                 {
-                    Exercises.Add(new ExerciseItemViewModel(exercise));
+                    var strengthSetExercise = exercise as StrengthSet;
+
+                    if (strengthSetExercise != null)
+                    {
+                        Exercises.Add(new StrengthSetItemViewModel((StrengthSet) exercise));
+                    }
                 }
 
                 OnPropertyChanged();
@@ -65,7 +70,7 @@ namespace GymTracker.ViewModels
         }
 
 
-        public ExerciseItemViewModel SelectedExercise { get; set; }
+        public StrengthSetItemViewModel SelectedStrengthSet { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
