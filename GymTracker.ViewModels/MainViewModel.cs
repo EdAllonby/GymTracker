@@ -3,8 +3,6 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Windows;
-using System.Windows.Input;
 using GymTracker.Models;
 using GymTracker.ViewModels.Annotations;
 
@@ -13,6 +11,7 @@ namespace GymTracker.ViewModels
     public class MainViewModel : INotifyPropertyChanged
     {
         private WorkoutItemViewModel selectedWorkout;
+        private string searchWorkouts;
 
         public MainViewModel()
         {
@@ -52,6 +51,19 @@ namespace GymTracker.ViewModels
                 OnPropertyChanged();
             }
         }
+
+
+        public string SearchWorkouts
+        {
+            get { return searchWorkouts; }
+            set
+            {
+                searchWorkouts = value;
+
+                OnPropertyChanged();
+            }
+        }
+
 
         public ExerciseItemViewModel SelectedExercise { get; set; }
 

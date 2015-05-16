@@ -14,7 +14,10 @@ namespace GymTracker.ViewModels
             this.exercise = exercise;
         }
 
-        public string ExerciseRoutine => exercise.Routine.ToString();
+        public string ExerciseRoutine
+        {
+            get { return exercise.Routine.ToString(); }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

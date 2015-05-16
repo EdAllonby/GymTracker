@@ -24,7 +24,7 @@ namespace GymTracker.ViewModels
             get
             {
                 TimeSpan span = DateTime.Now - workout.Day;
-                return string.Format("{0} Days ago...", span.TotalDays.ToString(CultureInfo.InvariantCulture));
+                return string.Format("{0} Days ago...", span.Days.ToString(CultureInfo.InvariantCulture));
             }
         }
 
