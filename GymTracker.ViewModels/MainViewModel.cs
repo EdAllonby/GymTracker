@@ -130,7 +130,7 @@ namespace GymTracker.ViewModels
                 gymContext.SaveChanges();
             }
 
-            Workouts.Add(new WorkoutItemViewModel(workout));
+            Workouts.Insert(0, new WorkoutItemViewModel(workout));
 
             CreateWorkoutCommand.RaiseCanExecuteChanged();
         }
