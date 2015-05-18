@@ -14,13 +14,7 @@ namespace GymTracker.ViewModels
             Exercises = workout.Exercises.ToList();
         }
 
-        public string WorkoutTime
-        {
-            get
-            {
-                return workout.TimeSinceWorkout.ToDaysAgo();
-            }
-        }
+        public string WorkoutTime => workout.TimeSinceWorkout.ToDaysAgo();
 
         public IEnumerable<Exercise> Exercises { get; }
     }

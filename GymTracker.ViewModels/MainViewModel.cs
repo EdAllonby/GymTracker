@@ -9,10 +9,10 @@ namespace GymTracker.ViewModels
 {
     public class MainViewModel : NotifiableViewModel
     {
-        private WorkoutItemViewModel selectedWorkout;
-        private string searchWorkouts;
         private ExerciseInformationViewModel exerciseInformationViewModel;
+        private string searchWorkouts;
         private ExerciseItemViewModel selectedExercise;
+        private WorkoutItemViewModel selectedWorkout;
 
         public MainViewModel()
         {
@@ -32,43 +32,8 @@ namespace GymTracker.ViewModels
             }
         }
 
-        private  bool CanCreateWorkout()
-        {
-            TimeSpan latestWorkout = TimeSpan.MaxValue;
-
-            using (GymContext gymContext = new GymContext())
-            {
-                foreach (Workout workout in gymContext.Workouts)
-                {
-                    if (latestWorkout > workout.TimeSinceWorkout)
-                    {
-                        latestWorkout = workout.TimeSinceWorkout;
-                    }
-                }
-            }
-
-            return latestWorkout.TotalHours > 4.0;
-        }
-
-        private void CreateWorkout()
-        {
-            var workout = new Workout();
-
-            using (GymContext gymContext = new GymContext())
-            {
-                gymContext.Workouts.Add(workout);
-                gymContext.SaveChanges();
-            }
-
-            Workouts.Add(new WorkoutItemViewModel(workout));
-
-            CreateWorkoutCommand.RaiseCanExecuteChanged();
-        }
-
         public static string Title => "Gym Tracker";
-
         public ObservableCollection<WorkoutItemViewModel> Workouts { get; set; }
-
         public ObservableCollection<ExerciseItemViewModel> Exercises { get; set; }
 
         public WorkoutItemViewModel SelectedWorkout
@@ -97,7 +62,7 @@ namespace GymTracker.ViewModels
                 OnPropertyChanged();
             }
         }
-        
+
         public string SearchWorkouts
         {
             get { return searchWorkouts; }
@@ -135,6 +100,39 @@ namespace GymTracker.ViewModels
                 exerciseInformationViewModel = value;
                 OnPropertyChanged();
             }
+        }
+
+        private bool CanCreateWorkout()
+        {
+            TimeSpan latestWorkout = TimeSpan.MaxValue;
+
+            using (GymContext gymContext = new GymContext())
+            {
+                foreach (Workout workout in gymContext.Workouts)
+                {
+                    if (latestWorkout > workout.TimeSinceWorkout)
+                    {
+                        latestWorkout = workout.TimeSinceWorkout;
+                    }
+                }
+            }
+
+            return latestWorkout.TotalHours > 4.0;
+        }
+
+        private void CreateWorkout()
+        {
+            var workout = new Workout();
+
+            using (GymContext gymContext = new GymContext())
+            {
+                gymContext.Workouts.Add(workout);
+                gymContext.SaveChanges();
+            }
+
+            Workouts.Add(new WorkoutItemViewModel(workout));
+
+            CreateWorkoutCommand.RaiseCanExecuteChanged();
         }
     }
 }

@@ -12,10 +12,7 @@ namespace GymTracker.ViewModels
             Exercise = exercise;
         }
 
-        public string Name
-        {
-            get { return Exercise.Name.GetEnumDescription(); }
-        }
+        public string Name => Exercise.Name.GetEnumDescription();
     }
 
     public abstract class ExerciseItemViewModel : NotifiableViewModel

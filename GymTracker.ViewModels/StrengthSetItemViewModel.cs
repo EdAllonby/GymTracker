@@ -10,14 +10,8 @@ namespace GymTracker.ViewModels
         {
         }
 
-        public string Reps
-        {
-            get { return string.Format("{0} reps", Exercise.Reps); }
-        }
-        
-        public string Weight
-        {
-            get { return string.Format("{0} kg", Exercise.Weight.ToString(CultureInfo.InvariantCulture)); }
-        }
+        public string Reps => $"{Exercise.Reps} reps";
+
+        public string Weight => $"{Exercise.Weight.ToString(CultureInfo.InvariantCulture)} kg";
     }
 }

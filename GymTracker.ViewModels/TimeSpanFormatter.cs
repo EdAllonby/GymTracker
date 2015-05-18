@@ -31,7 +31,7 @@ namespace GymTracker.ViewModels
 
             string nounToUse = NounFinder(nounState, singularNoun, pluralNoun);
 
-            return string.Format("{0} {1} ago.", timeUnitDistance, nounToUse);
+            return $"{timeUnitDistance} {nounToUse} ago.";
         }
 
         private static string NounFinder(NounState nounState, string singularVersion, string pluralVersion)
