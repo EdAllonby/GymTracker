@@ -9,6 +9,8 @@ namespace GymTracker.ViewModels
     {
         private WorkoutItemViewModel selectedWorkout;
         private string searchWorkouts;
+        private ExerciseInformationViewModel exerciseInformationViewModel;
+        private ExerciseItemViewModel selectedExercise;
 
         public MainViewModel()
         {
@@ -30,7 +32,7 @@ namespace GymTracker.ViewModels
 
         public ObservableCollection<WorkoutItemViewModel> Workouts { get; set; }
 
-        public ObservableCollection<ExerciseItemViewModel> Exercises { get; set; } 
+        public ObservableCollection<ExerciseItemViewModel> Exercises { get; set; }
 
         public WorkoutItemViewModel SelectedWorkout
         {
@@ -71,6 +73,30 @@ namespace GymTracker.ViewModels
             }
         }
 
-        public ExerciseItemViewModel SelectedExercise { get; set; }
+        public ExerciseItemViewModel SelectedExercise
+        {
+            get { return selectedExercise; }
+            set
+            {
+                if (value != null)
+                {
+                    selectedExercise = value;
+
+                    ExerciseInformationViewModel = new ExerciseInformationViewModel(SelectedExercise.ExerciseRoutine);
+
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public ExerciseInformationViewModel ExerciseInformationViewModel
+        {
+            get { return exerciseInformationViewModel; }
+            set
+            {
+                exerciseInformationViewModel = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

@@ -1,17 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GymTracker.Models
 {
     public class Workout : IEntity
     {
+        /// <summary>
+        /// Create a new workout with the day set to today.
+        /// </summary>
         public Workout()
         {
-            Day = DateTime.Now;
             Exercises = new List<Exercise>();
         }
 
-        public DateTime Day { get; private set; }
+        /// <summary>
+        /// Set an explicit workout day.
+        /// </summary>
+        /// <param name="workoutWorkoutDay">The day of the workout.</param>
+        public Workout(DateTime workoutWorkoutDay) : this()
+        {
+            WorkoutDay = workoutWorkoutDay;
+        }
+        
+        public DateTime WorkoutDay { get; private set; } = DateTime.Now;
+
+        [NotMapped]
+        public TimeSpan TimeSinceWorkout => DateTime.Now - WorkoutDay;
 
         public virtual ICollection<Exercise> Exercises { get;  private set; }
 

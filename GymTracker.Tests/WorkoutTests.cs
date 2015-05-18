@@ -12,7 +12,7 @@ namespace GymTracker.Tests
         {
             Workout workout = new Workout();
 
-            double diffInSeconds = (DateTime.Now - workout.Day).TotalSeconds;
+            double diffInSeconds = (DateTime.Now - workout.WorkoutDay).TotalSeconds;
 
             Assert.LessOrEqual(diffInSeconds, 5);
         }

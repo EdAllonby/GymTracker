@@ -14,17 +14,20 @@ namespace GymTracker.ViewModels
 
         public string Name
         {
-            get { return EnumExtensions.GetEnumDescription(Exercise.Name); }
+            get { return Exercise.Name.GetEnumDescription(); }
         }
     }
 
     public abstract class ExerciseItemViewModel : NotifiableViewModel
     {
-        public Type ExerciseType;
+        public Type ExerciseType { get; }
+
+        public Routine ExerciseRoutine { get; }
 
         protected ExerciseItemViewModel(Exercise exerciseType)
         {
             ExerciseType = exerciseType.GetType();
+            ExerciseRoutine = exerciseType.Name;
         }
     }
 }

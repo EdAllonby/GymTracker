@@ -26,7 +26,7 @@
         <controls:WindowCommands>
             <Button>
                 <StackPanel Orientation="Horizontal">
-                    <Rectangle Width="15" 
+                    <Rectangle Width="15"
                                Height="15"
                                Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
                         <Rectangle.OpacityMask>
@@ -39,16 +39,17 @@
                                Text="Settings" />
                 </StackPanel>
             </Button>
-            
+
             <Button Content="About" />
-                
+
         </controls:WindowCommands>
     </controls:MetroWindow.RightWindowCommands>
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="4*" />
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
@@ -133,15 +134,26 @@
                     <DataTemplate DataType="{x:Type viewModel:StrengthSetItemViewModel}">
                         <gymTracker:StrengthSetItemView />
                     </DataTemplate>
-                    
+
                     <DataTemplate DataType="{x:Type viewModel:TimeDistanceItemViewModel}">
-                        <gymTracker:TimeDistanceItemView/>
+                        <gymTracker:TimeDistanceItemView />
                     </DataTemplate>
                 </ListBox.Resources>
             </ListBox>
         </StackPanel>
 
         <GridSplitter Grid.Column="1" HorizontalAlignment="Left" Width="1" Foreground="LightGray" />
+
+        <StackPanel Grid.Column="2" Orientation="Vertical">
+            <Label Content="Exercise Information" HorizontalAlignment="Center" Foreground="Black" FontSize="20"
+                   FontFamily="/GymTracker;component/Resources/Fonts/Roboto/#Roboto Condensed" />
+
+            <gymTracker:ExerciseInformationView DataContext="{Binding ExerciseInformationViewModel}" />
+
+        </StackPanel>
+
+        <GridSplitter Grid.Column="2" HorizontalAlignment="Left" Width="1" Foreground="LightGray" />
+
 
     </Grid>
 </controls:MetroWindow>

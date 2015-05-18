@@ -61,6 +61,7 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimeDistanceItemViewModel.cs" />
+    <Compile Include="TimeSpanFormatter.cs" />
     <Compile Include="WorkoutItemViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

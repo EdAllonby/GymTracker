@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System.Collections.Generic;
 using System.Linq;
 using GymTracker.Models;
 
@@ -20,8 +18,7 @@ namespace GymTracker.ViewModels
         {
             get
             {
-                TimeSpan span = DateTime.Now - workout.Day;
-                return string.Format("{0} Days ago...", span.Days.ToString(CultureInfo.InvariantCulture));
+                return workout.TimeSinceWorkout.ToDaysAgo();
             }
         }
 
