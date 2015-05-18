@@ -1,31 +1,37 @@
 ﻿using System;
 
-namespace GymTracker.Models
+namespace GymTracker.ViewModels
 {
     public static class TimeSpanFormatter
     {
         public static string ToDaysAgo(this TimeSpan timeSpan)
         {
-            const string singular = "day";
-            const string plural = "days";
+            const string singular = "Day";
+            const string plural = "Days";
 
-            return ToNounAgo(timeSpan, singular, plural);
+            return ToNounAgo(timeSpan.Days, singular, plural);
         }
 
-        private static string ToNounAgo(TimeSpan timeSpan, string singularNoun, string pluralNoun)
+        private static string ToNounAgo(int timeUnitDistance, string singularNoun, string pluralNoun)
         {
-            int daysAgo = timeSpan.Days;
+            NounState nounState;
 
-            NounState nounState = NounState.Plural;
-
-            if (daysAgo == 1)
+            switch (timeUnitDistance)
             {
-                nounState = NounState.Singular;
+                case 0:
+                    // Special case.
+                    return "Today";
+                case 1:
+                    nounState = NounState.Singular;
+                    break;
+                default:
+                    nounState = NounState.Plural;
+                    break;
             }
 
-            string nounToUse = NounFinder(nounState, "day", "days");
+            string nounToUse = NounFinder(nounState, singularNoun, pluralNoun);
 
-            return string.Format("{0} {1} ago", daysAgo, nounToUse);
+            return string.Format("{0} {1} ago.", timeUnitDistance, nounToUse);
         }
 
         private static string NounFinder(NounState nounState, string singularVersion, string pluralVersion)
@@ -37,7 +43,6 @@ namespace GymTracker.Models
 
                 case NounState.Plural:
                     return pluralVersion;
-
             }
 
             // If no noun state specified, return the more common plural version (worst case will say 1 days).

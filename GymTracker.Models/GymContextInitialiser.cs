@@ -10,7 +10,7 @@ namespace GymTracker.Models
         {
             var defaultWorkouts = new List<Workout>();
 
-            Workout workout1 = new Workout(DateTime.Now.AddDays(-1));
+            Workout workout1 = new Workout();
 
             workout1.AddExercise(new StrengthSet(Routine.DumbellPress, 8, 50));
             workout1.AddExercise(new StrengthSet(Routine.BenchPress, 12, 80));
