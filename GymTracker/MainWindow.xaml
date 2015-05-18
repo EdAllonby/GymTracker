@@ -59,6 +59,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="77" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
             <Grid Name="TopLeftBar"
@@ -103,6 +104,7 @@
                     </Border>
                 </StackPanel>
             </Grid>
+
             <StackPanel Grid.Column="0"
                         Grid.Row="1"
                         Background="White">
@@ -120,6 +122,19 @@
                 </ListBox>
             </StackPanel>
 
+            <Button Grid.Row="2" HorizontalAlignment="Left" Command="{Binding CreateWorkoutCommand}"
+                    Height="40" Width="40"
+                    Margin="5,0,0,0"
+                    Style="{DynamicResource MetroCircleButtonStyle}">
+                <Rectangle Width="20"
+                           Height="20"
+                           Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill"
+                                     Visual="{DynamicResource appbar_add}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
         </Grid>
 
         <StackPanel Grid.Column="1" Orientation="Vertical">

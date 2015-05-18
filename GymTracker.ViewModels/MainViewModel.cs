@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using GymTracker.Models;
+using Microsoft.Practices.Prism.Commands;
 
 namespace GymTracker.ViewModels
 {
@@ -14,6 +16,8 @@ namespace GymTracker.ViewModels
 
         public MainViewModel()
         {
+            CreateWorkoutCommand = new DelegateCommand(CreateWorkout, CanCreateWorkout);
+
             using (var context = new GymContext())
             {
                 List<Workout> workouts = context.Workouts.ToList();
@@ -26,6 +30,39 @@ namespace GymTracker.ViewModels
                     Workouts.Add(new WorkoutItemViewModel(workout));
                 }
             }
+        }
+
+        private  bool CanCreateWorkout()
+        {
+            TimeSpan latestWorkout = TimeSpan.MaxValue;
+
+            using (GymContext gymContext = new GymContext())
+            {
+                foreach (Workout workout in gymContext.Workouts)
+                {
+                    if (latestWorkout > workout.TimeSinceWorkout)
+                    {
+                        latestWorkout = workout.TimeSinceWorkout;
+                    }
+                }
+            }
+
+            return latestWorkout.TotalHours > 4.0;
+        }
+
+        private void CreateWorkout()
+        {
+            var workout = new Workout();
+
+            using (GymContext gymContext = new GymContext())
+            {
+                gymContext.Workouts.Add(workout);
+                gymContext.SaveChanges();
+            }
+
+            Workouts.Add(new WorkoutItemViewModel(workout));
+
+            CreateWorkoutCommand.RaiseCanExecuteChanged();
         }
 
         public static string Title => "Gym Tracker";
@@ -60,8 +97,7 @@ namespace GymTracker.ViewModels
                 OnPropertyChanged();
             }
         }
-
-
+        
         public string SearchWorkouts
         {
             get { return searchWorkouts; }
@@ -72,6 +108,8 @@ namespace GymTracker.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public DelegateCommand CreateWorkoutCommand { get; private set; }
 
         public ExerciseItemViewModel SelectedExercise
         {
