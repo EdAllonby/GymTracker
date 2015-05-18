@@ -109,7 +109,7 @@ namespace GymTracker.ViewModels
             }
         }
 
-        public DelegateCommand CreateWorkoutCommand { get; private set; }
+        public DelegateCommand CreateWorkoutCommand { get; }
 
         public ExerciseItemViewModel SelectedExercise
         {

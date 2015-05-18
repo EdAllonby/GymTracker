@@ -12,7 +12,7 @@ namespace GymTracker.ViewModels
 
         public string Reps
         {
-            get { return string.Format("{0} reps", Exercise.Reps.ToString()); }
+            get { return string.Format("{0} reps", Exercise.Reps); }
         }
         
         public string Weight
