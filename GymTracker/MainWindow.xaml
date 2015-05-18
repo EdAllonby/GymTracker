@@ -18,13 +18,7 @@
                       MinWidth="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, Converter={converters:RatioConverter}, ConverterParameter='0.5' }">
     <Window.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Skin.xaml" />
-                <ResourceDictionary Source="Resources/Icons.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-
             <converters:RatioConverter x:Key="RatioConverter" />
-
         </ResourceDictionary>
     </Window.Resources>
 

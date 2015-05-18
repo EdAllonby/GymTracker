@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using GymTracker.Models;
-using GymTracker.ViewModels.Annotations;
 
 namespace GymTracker.ViewModels
 {
-    public class WorkoutItemViewModel : INotifyPropertyChanged
+    public class WorkoutItemViewModel : NotifiableViewModel
     {
         private readonly Workout workout;
 
@@ -29,13 +26,5 @@ namespace GymTracker.ViewModels
         }
 
         public IEnumerable<Exercise> Exercises { get; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

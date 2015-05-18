@@ -53,7 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnumExtensions.cs" />
+    <Compile Include="ExerciseInformationViewModel.cs" />
     <Compile Include="ExerciseItemViewModel.cs" />
+    <Compile Include="NotifiableViewModel.cs" />
     <Compile Include="StrengthSetItemViewModel.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />

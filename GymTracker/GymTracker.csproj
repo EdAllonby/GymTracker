@@ -70,6 +70,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\RatioConverter.cs" />
+    <Compile Include="ExerciseInformation.xaml.cs">
+      <DependentUpon>ExerciseInformation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StrengthSetItemView.xaml.cs">
       <DependentUpon>StrengthSetItemView.xaml</DependentUpon>
     </Compile>
@@ -79,6 +82,10 @@
     <Compile Include="WorkoutItemView.xaml.cs">
       <DependentUpon>WorkoutItemView.xaml</DependentUpon>
     </Compile>
+    <Page Include="ExerciseInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Skin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

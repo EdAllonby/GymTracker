@@ -1,7 +1,5 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using System;
 using GymTracker.Models;
-using GymTracker.ViewModels.Annotations;
 
 namespace GymTracker.ViewModels
 {
@@ -9,7 +7,7 @@ namespace GymTracker.ViewModels
     {
         protected readonly TExercise Exercise;
 
-        protected ExerciseItemViewModel(TExercise exercise)
+        protected ExerciseItemViewModel(TExercise exercise) : base(exercise)
         {
             Exercise = exercise;
         }
@@ -20,14 +18,13 @@ namespace GymTracker.ViewModels
         }
     }
 
-    public abstract class ExerciseItemViewModel : INotifyPropertyChanged
+    public abstract class ExerciseItemViewModel : NotifiableViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public Type ExerciseType;
 
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected ExerciseItemViewModel(Exercise exerciseType)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            ExerciseType = exerciseType.GetType();
         }
     }
 }
