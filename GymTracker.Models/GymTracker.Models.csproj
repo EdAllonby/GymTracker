@@ -58,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routine.cs" />
     <Compile Include="StrengthSet.cs" />
+    <Compile Include="TimeDistanceExercise.cs" />
     <Compile Include="Workout.cs" />
   </ItemGroup>
   <ItemGroup>

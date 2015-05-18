@@ -131,15 +131,19 @@
             <Label Content="Exercises" HorizontalAlignment="Center" Foreground="Black" FontSize="20"
                    FontFamily="/GymTracker;component/Resources/Fonts/Roboto/#Roboto Condensed" />
             <ListBox ItemsSource="{Binding Exercises, UpdateSourceTrigger=Default}"
-                     SelectedItem="{Binding SelectedStrengthSet}" FontFamily="Yu Gothic Light"
+                     SelectedItem="{Binding SelectedExercise}" FontFamily="Yu Gothic Light"
                      ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch"
                      BorderThickness="0">
 
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
+                <ListBox.Resources>
+                    <DataTemplate DataType="{x:Type viewModel:StrengthSetItemViewModel}">
                         <gymTracker:StrengthSetItemView />
                     </DataTemplate>
-                </ListBox.ItemTemplate>
+                    
+                    <DataTemplate DataType="{x:Type viewModel:TimeDistanceItemViewModel}">
+                        <gymTracker:TimeDistanceItemView/>
+                    </DataTemplate>
+                </ListBox.Resources>
             </ListBox>
         </StackPanel>
 

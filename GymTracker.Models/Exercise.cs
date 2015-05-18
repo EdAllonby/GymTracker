@@ -9,14 +9,15 @@ namespace GymTracker.Models
         {
         }
 
-        protected Exercise(Routine routine)
+        protected Exercise(Routine name)
         {
-            Routine = routine;
+            Name = name;
         }
 
         public virtual Workout Workout { get; private set; }
 
-        public Routine Routine { get; private set; }
+        public Routine Name { get; private set; }
+
         public int Id { get; private set; }
     }
 }

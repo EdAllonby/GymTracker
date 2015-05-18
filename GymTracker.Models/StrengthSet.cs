@@ -9,7 +9,7 @@ namespace GymTracker.Models
         {
         }
 
-        public StrengthSet(Routine routine, int reps, double weight) : base(routine)
+        public StrengthSet(Routine name, int reps, double weight) : base(name)
         {
             Reps = reps;
             Weight = weight;

@@ -73,6 +73,9 @@
     <Compile Include="StrengthSetItemView.xaml.cs">
       <DependentUpon>StrengthSetItemView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TimeDistanceItemView.xaml.cs">
+      <DependentUpon>TimeDistanceItemView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WorkoutItemView.xaml.cs">
       <DependentUpon>WorkoutItemView.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TimeDistanceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WorkoutItemView.xaml">
       <Generator>MSBuild:Compile</Generator>

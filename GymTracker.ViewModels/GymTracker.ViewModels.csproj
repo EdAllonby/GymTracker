@@ -53,10 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnumExtensions.cs" />
+    <Compile Include="ExerciseItemViewModel.cs" />
     <Compile Include="StrengthSetItemViewModel.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeDistanceItemViewModel.cs" />
     <Compile Include="WorkoutItemViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

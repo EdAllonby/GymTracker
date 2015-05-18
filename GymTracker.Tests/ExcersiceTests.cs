@@ -12,7 +12,7 @@ namespace GymTracker.Tests
             Routine routine = Routine.BenchPress;
             Exercise exercise = new StrengthSet(routine, 2, 20);
 
-            Assert.AreEqual(exercise.Routine, routine);
+            Assert.AreEqual(exercise.Name, routine);
         }
     }
 }

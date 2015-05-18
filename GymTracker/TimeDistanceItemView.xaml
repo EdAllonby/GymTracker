@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="GymTracker.StrengthSetItemView"
+﻿<UserControl x:Class="GymTracker.TimeDistanceItemView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7,7 +7,7 @@
              xmlns:viewModel="clr-namespace:GymTracker.ViewModels;assembly=GymTracker.ViewModels"
              TextOptions.TextFormattingMode="Display"
              TextOptions.TextRenderingMode="ClearType"
-             d:DataContext="{d:DesignInstance viewModel:StrengthSetItemViewModel }">
+             d:DataContext="{d:DesignInstance viewModel:TimeDistanceItemViewModel }">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -18,8 +18,8 @@
         <Label Grid.Row="0" Content="{Binding Name}"  FontSize="20" FontFamily="/GymTracker;component/Resources/Fonts/Roboto/#Roboto Condensed" />
 
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Label Content="{Binding Reps}" />
-            <Label Content="{Binding Weight}" />
+            <Label Content="{Binding TimeInMinutes}" />
+            <Label Content="{Binding DistanceInMeters}" />
         </StackPanel>
     </Grid>
 

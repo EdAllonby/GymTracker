@@ -10,6 +10,10 @@ namespace GymTracker.Models
         [Description("Dumbell Press")]
         DumbellPress,
 
-        Rows
+        Rows,
+
+        Running,
+
+        Rowing
     }
 }
